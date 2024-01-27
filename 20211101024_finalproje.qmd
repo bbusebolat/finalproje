@@ -1,0 +1,58 @@
+---
+title: "R Final Projesi"
+author: "Buse Nur Bolat"
+format: html
+editor: visual
+---
+
+```{r}
+library(readxl)
+X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri <- read_excel("C:/Users/Berkay/Downloads/10-vdym-ilce-baznda-hanelerin-elektronik-aletleri-yardm-almadan-kullanabilme-istatistikleri.xlsx")
+View(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+```
+
+**İlçe Bazında Hanelerin Elektronik Aletleri Yardım Almadan Kullanabilme İstatistikleri ve Grafikleri**
+
+```{r}
+Amelia::missmap(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+```
+
+```{r}
+VIM::matrixplot(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+
+```
+
+```{r}
+visdat::vis_miss(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+```
+
+```{r}
+library(scatterPlotMatrix)
+scatterPlotMatrix(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+```
+
+```{r}
+library(VIM)
+marginplot(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri[,c("İlçe","İnternet alışverişi yapmak")])
+```
+
+```{r}
+barMiss(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri[,c("Görüntülü konuşmak")])
+```
+
+```{r}
+barMiss(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri[,c("Görüntülü konuşmak","Telefon rehberine yeni kişi eklemek")])
+```
+
+```{r}
+parcoordMiss(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri)
+```
+
+```{r}
+library(VIM)
+scattJitt(X10_vdym_ilce_baznda_hanelerin_elektronik_aletleri_yardm_almadan_kullanabilme_istatistikleri[,1:2])
+```
+
+```{r}
+
+```
